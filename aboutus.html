@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+        <!-- build:css css/main.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.css" integrity="sha512-SZgE3m1he0aEF3tIxxnz/3mXu/u/wlMNxQSnE0Cni9j/O8Gs+TjM9tm1NX34nRQ7GiLwUEzwuE3Wv2FLz2667w==" crossorigin="anonymous" />
+    <link href="node_modules/@fortawesome/fontawesome-free/css/all.css " rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <!--endbuild-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js" integrity="sha512-f0VlzJbcEB6KiW8ZVtL+5HWPDyW1+nJEjguZ5IVnSQkvZbwBt2RfCBY0CBO1PsMAqxxrG4Di6TfsCPP3ZRwKpA==" crossorigin="anonymous"></script>
+
+  
+    <link rel="icon" type="image/x-icon" href="/img/favicon.svg">
+    <title>MiniSubs</title>
+  </head>
+  <body>
+    
+    <div class="container-fluid">
+        <div class="row">
+                <nav class="col-12 navbar navbar-dark bg-info">
+                    <div class="col-xs-3 my-auto">
+                      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                      </button>
+                    </div>
+                    <div class="col-xs-6">
+                      <a class="navbar-brand font-weight-bolder text-white" href="index.html">
+                          <i class="fa-solid fa-house-user text-white"></i>
+                      MiniSubs
+                       </a>
+                    </div>
+                    <div class="col-xs-3 my-auto mr-4"
+                        <button type="button" class="btn btn-lite" data-toggle="modal" data-target="#searchModal">
+                          <i class="fa-solid fa-magnifying-glass text-white"></i>
+                        </button>
+                    </div>
+                        <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+                          <ul class="navbar-nav">
+                              <li class="nav-item active">
+                                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="aboutus.html">About Us/ FAQs</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" data-target="#loginModal" data-toggle="modal" id="loginModalBtn" href="#loginModal" tabindex="-1" aria-disabled="true">Login</a>
+                              </li>
+                            </ul>
+                        </div>
+                        
+                  
+                </nav>
+
+                <!--breadcrumb begins-->
+                <style>
+                  .breadcrumb-item a {
+                    color: black;
+                  }
+                </style>
+                <nav style="--bs-breadcrumb-divider: '';" class="row nav-lite bg-primary breadcrumb my-0 mx-0" aria-label="breadcrumb">
+                  <ol>
+                    <li class="breadcrumb-item" style="display: inline;"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page" style="display: inline;">About Us</li>
+                  </ol>
+                </nav>
+                <!--breadcrumb ends-->
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header bg-info">
+                          <h5 class="modal-title text-white  my-auto" id="exampleModalLabel">Search for Listings</h5>
+                          <button type="button" class="close text-white my-auto" data-dismiss="modal" aria-label="Close">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                          <form class="form-group">
+                            <label for="zip">Enter Zip Code:</label>
+                            <input id="zip" class="form-control type="text" required/>
+                            <br>
+                            <label for="form-select">Distance Around Zip Code: </label><br>
+                            <select class="form-select form-select-sm" required aria-label="Default select example">
+                              <option selected>Choose a Distance</option>
+                              <option value="50">50 miles</option>
+                              <option value="100">100 miles</option>
+                              <option value="200">200 miles</option>
+                            </select>
+                                    <div id="slider-outer-div">
+                                      <div id="slider-div">
+                                      <div>Price:</div>
+                                        <div>$50/mth</div>
+                                        <div>
+                                        <div id="slider-max-label" class="slider-label"></div>
+                                        <div id="slider-min-label" class="slider-label"></div>
+                                          <input id="ex2" type="text" data-slider-min="50"
+                                            data-slider-max="2000" data-slider-value="[50,300]"
+                                            data-slider-tooltip="hide" required/>
+                                        </div>
+                                        <div>$2000/mth</div>
+                                      </div>
+                                    </div>
+                          
+                        </div>
+                        <div class="modal-footer">
+                          <button type="submit" class="btn btn-primary" onclick="location.href='listings.html'">Search</button>
+                        </div>
+                      </form>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                   <!-- Modal -->
+
+
+                   <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header bg-info border-bottom-0">
+                          <div class="form-title text-center">
+                            <h4 class="text-white">Please Login</h4>
+                          </div>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          
+                          <div class="d-flex flex-column text-center">
+                            <form>
+                              <div class="form-group">
+                                <input type="email" class="form-control" id="email1"placeholder="Your email address...">
+                              </div>
+                              <div class="form-group">
+                                <input type="password" class="form-control" id="password1" placeholder="Your password...">
+                              </div>
+                              <button type="button" class="btn btn-info btn-block btn-round w-50" onclick="location.href='my_account.html'">Login</button>
+                            </form>
+                            <br><br>
+                            <div class="text-center text-muted delimiter">Or use a social network...</div>
+                            <div class="d-flex justify-content-center social-buttons">
+                              <button type="button" class="btn btn-dark btn-round" data-toggle="tooltip" data-placement="top" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                              </button>
+                              <button type="button" class="btn btn-dark btn-round ml-3" data-toggle="tooltip" data-placement="top" title="Facebook">
+                                <i class="fab fa-facebook"></i>
+                              </button>
+                              <button type="button" class="btn btn-dark btn-round ml-3" data-toggle="tooltip" data-placement="top" title="Linkedin">
+                                <i class="fab fa-linkedin"></i>
+                              </button>
+                            </di>
+                          </div>
+                        </div>
+                      </div>
+                        <div class="modal-footer d-flex justify-content-center">
+                          <div class="signup-section">Not a member yet? <a href="my_account.html" class="text-info"> Sign Up</a>.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  <div class='container-fluid bg-light mx-auto mb-5 col-12' style="text-align: center">
+                    <div class="hd mt-5 mb-5"><h3><u>What We Believe</u></h3></div>
+                    <div class="row mb-5 mx-1" style="justify-content: center">
+                        <div class="card col-xl-2 col-md-3 col-xs-12 mt-2">
+                            <div class="card-content">
+                                <div class="card-body"> <img class="img" src="https://i.imgur.com/S7FJza5.png" />
+                                    <div class="shadow"></div>
+                                    <div class="card-title">Saving You Money </div>
+                                    <div class="card-subtitle">
+                                        <p> <small class="text-muted">Housing costs are ridiculously exprensive today. We wanted to create a platform where individuals can come together to help each other's needs get met.</small> </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card col-xl-2 col-md-3 col-xs-12 ml-2 mt-2">
+                            <div class="card-content">
+                                <div class="card-body"> <img class="img" src="https://i.imgur.com/xUWJuHB.png" />
+                                    <div class="card-title"> Extensive Filters to Help You Hit the Mark</div>
+                                    <div class="card-subtitle">
+                                        <p> <small class="text-muted"> We've vetted all of our members extensively to create a safe experience, and through extensive Q&As and filters, we want to help you find your ideal match. </small> </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card col-xl-2 col-md-3 col-xs-12 ml-2 mt-2">
+                            <div class="card-content">
+                                <div class="card-body"> <img class="img py-4" src="https://i.imgur.com/rG3CGn3.png" />
+                                    <div class="card-title">Launching Your Next Big Break </div>
+                                    <div class="card-subtitle">
+                                        <p> <small class="text-muted">We guide you through the entire process, with our amazing Customer Service, so that you can be confident in reaching your goals.</small> </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-5 mx-1">
+                    <div class="col-xs-10 col-sm-8 col-md-6 col-xl-4 mx-auto">
+                      <h3 class="text-center mb-5"><u>Our Founder</u></h3>
+                      <div class="float-left mr-2 mb-1" style="width:45%"><img class="img-fluid rounded float-left" src="img/founder.jpg"></div>
+                      <div><p class="text-break">Hi! I'm Maria Angel, and I started MiniSubs in March of 2022, as a new Full Stack Developer, struggling to find a place to stay in a big city for an internship. My goal was for this website to serve as a connection between those in need of more equitable housing
+                         and those trying to break the cycle of living paycheck to paycheck. Initially geared towards students on internships, we have expanded to reaching populations we never dreamed of! We would like to thank our donors and users for this success! For every dollar we receive, we 
+                         donate $0.25 to Homeless Charities. We are working hard to create solutions to homelessness around the United States and would be eager to continue that mission around the globe.</p>
+                       </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="row bg-light py-5">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-10 col-lg-4 text-center">
+                          <h3 class="mb-4"><u>Our Team</u></h3>
+                          <p class="mb-4 pb-2 mb-md-5 pb-md-0">
+                            Meet the individuals who made this project possible!
+                          </p>
+                        </div>
+                      </div>
+                    
+                      <div class="row text-center d-flex justify-content-center">
+                        <div class="col-xl-2 col-md-4 col-xs-8 mb-5">
+                          <div class="card testimonial-card">
+                            <div class="card-up bg-primary"></div>
+                            <div class="avatar mx-auto bg-white">
+                              <img
+                                src="https://livedemo00.template-help.com/wt_62267_v8/prod-20823-one-service/images/testimonials-03-179x179.png" alt=""
+                                class="rounded-circle img-fluid"
+                              />
+                            </div>
+                            <div class="card-body">
+                              <h4 class="mb-4">Francesco D'algieri</h4>
+                              <p class="dark-grey-text mt-4">Software Developer</p>
+                              <hr />
+                              <p class="dark-grey-text mt-4">
+                                <i class="fas fa-quote-left pe-2"></i>There was a period of my life when I was homeless. Now, I know I want to help other people like me avoid that situation, that I was in, at whatever cost.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xl-2 col-md-4 col-xs-8 mb-5">
+                          <div class="card testimonial-card">
+                            <div class="card-up bg-primary"></div>
+                            <div class="avatar mx-auto bg-white">
+                              <img
+                                src="https://livedemo00.template-help.com/wt_62267_v8/prod-20823-one-service/images/testimonials-01-179x179.png" 
+                                class="rounded-circle img-fluid"
+                              />
+                            </div>
+                            <div class="card-body">
+                              <h4 class="mb-4">Marina Albescu</h4>
+                              <p class="dark-grey-text mt-4">HR & Marketing</p>
+                              <hr />
+                              <p class="dark-grey-text mt-4">
+                                <i class="fas fa-quote-left pe-2"></i>My son was trying to find an internship in NYC and needed a place to stay. It took us <i>MONTHS</i> to find anything. I wish we had MiniSubs, so I am proud to be part of this project.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xl-2 col-md-4 col-xs-8 mb-5">
+                          <div class="card testimonial-card">
+                            <div class="card-up bg-primary"></div>
+                            <div class="avatar mx-auto bg-white">
+                              <img
+                                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp"
+                                class="rounded-circle img-fluid"
+                              />
+                            </div>
+                            <div class="card-body">
+                              <h4 class="mb-4">Ed Cummings</h4>
+                              <p class="dark-grey-text mt-4">Finance</p>
+                              <hr />
+                              <p class="dark-grey-text mt-4">
+                                <i class="fas fa-quote-left pe-2"></i>Adequate housing is a human right, not a luxury. I am proud to be working on this team, making that human right a bit more achievable for the average person.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                </div>
+
+                <div class="row my-5 mx-auto d-flex justify-content-center">
+                  <div class="col-xs-6 col-xl-4 d-flex col mx-5 card justify-content-center">
+                    <div class="card-header bg-white">
+                      <h5 class="text-center">Our Promise</h5>
+                    </div>
+                    <div class="card-body">
+                      <p>We promise to keep the costs low. To fund this project, we take a small percentage of the exchange between parties (11.56%).
+                          After this exchange, we donate $0.25 for every dollar earned. We keep a small staff, who works
+                          virtually, for the purpose of keeping costs low for everyone. Have any questions? Feel free to
+                          contact us to discuss with us more.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+          </div>                        
+                
+      
+                <div id="desktop" class="row mt-5">        
+                  <footer class="bg-secondary col-12 d-flex justify-content-center">
+                      <div class="col-3">
+                        
+                        <ul class="text-white mb-5">
+                          <li><h4 class="text-white mt-5">Contact Us</h4></li>
+                          <li></li>
+                          <li>775 Corporate Woods Parkway</li>
+                          <li>Vernon Hills IL 60061</li>
+                          <li>P: (847) 215-6565</li>
+                          <li>E: <a class="text-white" href="usa@allgroup.com">usa@allgroup.com</a></li>
+                        </ul>
+                      </div>
+                      <div class="col-6 mx-auto d-flex justify-content-center text-center">
+                        <ul class="col-4 mt-4">
+                          <li><a class="navbar-brand font-weight-bolder text-white" href="index.html">
+                            <i class="fa-solid fa-house-user text-white"></i>
+                                MiniSubs
+                                </a>
+                          </li>
+                          <li><center><hr class="text-white"></center></li>
+                          <li><i class="fab fa-facebook text-white"></i><i class=" ml-3 fab fa-twitter text-white"></i><i class="ml-3 fab fa-instagram text-white"></i><i class="ml-3 fab fa-tiktok text-white"></i></li>
+                          <li><p class="text-center text-white mt-5">©Copyright MiniSubs 2022</p></li>
+                        </ul>
+                      </div>
+                      <div class="col-3 my-5 d-flex justify-content-end">
+                        <ul class="text-white mr-5 text-right">
+                          <li><h4 class="text-white">Links</h4></li>
+                          <li><a class="text-white" href="aboutus.html">About Us</a></li>
+                          <li><a class="text-white" href="#">Careers</a></li>
+                          <li><a class="text-white" href="#">Terms and Conditions</a></li>
+                          <li><a class="text-white" href="#">Privacy Policy</a></li>
+                        </ul>
+                      </div>
+                      
+                  </footer>
+                  </div>
+                  <div id="mobile" class="row mt-5">        
+                    <footer id="mobile" class="bg-secondary col-12 d-flex justify-content-center">
+                        <div class="col-12 mx-auto d-flex justify-content-center text-center">
+                          <ul class="col-sm-4 col-xs-6 mt-4">
+                            <li><a class="navbar-brand font-weight-bolder text-white" href="index.html">
+                              <i class="fa-solid fa-house-user text-white"></i>
+                                  MiniSubs
+                                  </a>
+                            </li>
+                            <li><center><hr class="text-white"></center></li>
+                            <li class="my-4"><i class="fab fa-facebook text-white"></i><i class=" ml-3 fab fa-twitter text-white"></i><i class="ml-3 fab fa-instagram text-white"></i><i class="ml-3 fab fa-tiktok text-white"></i></li>
+                            <li><a class="text-white" href="#">Terms and Conditions</a></li>
+                            <li><a class="text-white" href="#">Privacy Policy</a></li>
+                            <li><p class="text-center text-white mt-5">©Copyright MiniSubs 2022</p></li>
+                          </ul>
+                        </div>              
+                    </footer>
+                    </div>
+                  </div>
+      
+              </div>
+          </div>
+          <script>
+            const setLabel = (lbl, val) => {
+            const label = $(`#slider-${lbl}-label`);
+            label.text(val);
+            const slider = $(`#slider-div .${lbl}-slider-handle`);
+            const rect = slider[0].getBoundingClientRect();
+            label.offset({
+              top: rect.top - 30,
+              left: rect.left
+            });
+          }
+      
+          const setLabels = (values) => {
+            setLabel("min", values[0]);
+            setLabel("max", values[1]);
+          }
+      
+      
+          $('#ex2').slider().on('slide', function(ev) {
+            setLabels(ev.value);
+          });
+          setLabels($('#ex2').attr("data-value").split(","));
+          </script>
+          <!-- Optional JavaScript -->
+          <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <!-- build:js js/main.js -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js" integrity="sha512-f0VlzJbcEB6KiW8ZVtL+5HWPDyW1+nJEjguZ5IVnSQkvZbwBt2RfCBY0CBO1PsMAqxxrG4Di6TfsCPP3ZRwKpA==" crossorigin="anonymous"></script>
+      <script src="js/script.js"></script>
+       <!-- endbuild -->
+      </body>
+      </html>
